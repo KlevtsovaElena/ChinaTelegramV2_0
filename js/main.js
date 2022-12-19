@@ -34,6 +34,7 @@ renderposts();
         xhr.open('GET', url, false);
         xhr.send();
         renderposts();
+        document.getElementById('usertext').value = "";
         }
     }
 
