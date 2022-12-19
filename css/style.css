@@ -128,7 +128,7 @@ div, p, a, input, ::placeholder {
     border: none;
     cursor: pointer;
     height: 35px;
-    background-color: rgb(128 128 128 / 0%);
+    background-color: rgba(79, 17, 17);
 }
 
 .send-pic {
