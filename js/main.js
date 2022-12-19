@@ -12,13 +12,16 @@ function setUsername(){
 
     }
 
+
+//раскомментить перед сдачей
+/*
     setInterval(function(){
         renderposts();
     }, 3000);
-
-
-
-
+*/
+//удалить---------
+renderposts();
+//---------------------
     function addPost(){
         let message = document.getElementById('usertext').value;
         let date = new Date().toLocaleTimeString().slice(0, -3);
