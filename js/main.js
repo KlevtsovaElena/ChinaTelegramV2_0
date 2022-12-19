@@ -49,12 +49,12 @@ function setUsername(){
                 container.innerHTML += template.replace('${name}',db[i]['name'])
                 .replace('${text}',db[i]['message'])
                 .replace('${time}',db[i]['date'])
-                .replace('${}','left')
+                .replace('${}','right')
             }else{
                 container.innerHTML += template .replace('${name}',db[i]['name'])
                 .replace('${text}',db[i]['message'])
                 .replace('${time}',db[i]['date'])
-                .replace('${}','right')
+                .replace('${}','left')
             }
         }
     }
