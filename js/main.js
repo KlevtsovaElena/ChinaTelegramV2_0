@@ -44,7 +44,7 @@ function setUsername(){
         let container = document.getElementById('message');
         let template = document.getElementById('text-message').innerHTML;
         container.innerHTML = "";
-        for(let i = 0; i < db.length; i++){
+        for(let i = db.length-1; i >= 0; i--){
             if(window.localStorage.username == db[i]['name']){
                 container.innerHTML += template.replace('${name}',db[i]['name'])
                 .replace('${text}',db[i]['message'])
