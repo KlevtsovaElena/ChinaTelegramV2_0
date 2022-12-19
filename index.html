@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mende+Kikakui&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <script defer src="js/main.js"></script>
+    <title>Messenger</title>
+</head>
+<body>
+    <div class="gog">
+        <div id="message">
+            <div class="menu-window">
+                <div class="information">
+                    <div class="name-menu">Name: ${name}</div>
+                    <div class="status">Status: ${something}</div>
+                    <div class="bg-wallpapers"></div>
+                </div>
+            </div>
+            <div class="header">
+                <div class="menu">
+                    <img class="burger" src="img/menu.png" alt="">
+                    <div class="logo">
+                        <img class="logopng" src="img/header-logo.webp" alt="Messenger">
+                    </div>
+                </div>
+                
+                <div class="header-name">China Telegram v1.1
+                </div>
+            </div>
+            <!-- <div class="flex-box ${}">
+                <div class="window">
+                    <div class="name">${name}</div>
+                    <div class="text">${text}</div>
+                    <div class="time">${time}</div>
+                </div>
+            </div>     -->
+        </div>
+        <div class="sendmessage">
+            <input id="usertext" type="text" placeholder="Write a message...">
+            <button class="send" onclick="addPost()"><img class="send-pic" src="img/send.png"></button>
+        </div>
+        <div class="footer">
+            <div class="about-us">
+        Copyright © 2022 iNordic China-Telegram. All rights reserved.</div>
+        </div>
+    </div>
+    <template id="text-message">
+        <div class="flex-box ${}">
+            <div class="window">
+                <div class="name">${name}</div>
+                <div class="text">${text}</div>
+                <div class="time">${time}</div>
+            </div>
+        </div>
+    </template>
+</body>
+</html>
