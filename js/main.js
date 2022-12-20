@@ -5,12 +5,13 @@ let userName = window.localStorage.getItem('username');
 if(userName == null || userName == '' || userName == undefined || userName == 'null' || userName.trim() == ''){
     setUsername();
 } 
-console.log(userName);
+console.log("При загрузке username:  " + userName);
   
 //Установим никнейм: показываем окно ввода никнейма, записываем в LS введённое значение
 function setUsername(){
         userName = prompt("Введите Ваш никнейм:");
         window.localStorage.setItem('username', userName);
+        console.log("setUsername: " + userName);
     }
 
 
@@ -55,7 +56,7 @@ function renderposts(){
     let template = document.getElementById('text-message').innerHTML;
     container.innerHTML = "";
     
-    for(let i = db.length-1; i >= 0; i--){
+    for(let i = 0; i < db.length; i++){
         let timeUser = new Date(db[i]['backtime']);
 
         if(window.localStorage.username == db[i]['name']){
@@ -70,6 +71,8 @@ function renderposts(){
             .replace('${}','left')
         }
     }
+
+    container.scrollTo(0, container.scrollHeight);
 }
     function userClear(){
         window.localStorage.setItem('username', '');
