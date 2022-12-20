@@ -1,0 +1,38 @@
+<script>
+let date = new Date();
+alert(date.getUTCHours());
+let userName = "lena";
+addPost();
+function addPost(){
+    let message = "приветики";
+
+    let date = new Date().toLocaleTimeString().slice(0, -3);
+
+    let url = 'https://test.chemezoida.repl.co/?addpost&name=' + userName + '&message=' + message + '&date=' + date;
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', url, false);
+    xhr.send();
+
+
+}
+renderposts();
+function renderposts(){
+    let url = 'https://test.chemezoida.repl.co/?getposts';
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', url, false);
+    xhr.send()
+    let response = xhr.responseText;
+    let db = JSON.parse(response);
+   
+   let newDate = new Date( db[0]['backtime']);
+    alert(newDate.toLocaleTimeString());
+
+
+  //  for(let i = db.length-1; i >= 0; i--){
+        
+    //}
+
+}
+
+
+</script>

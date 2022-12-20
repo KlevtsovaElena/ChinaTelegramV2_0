@@ -54,16 +54,19 @@ function renderposts(){
     let container = document.getElementById('message');
     let template = document.getElementById('text-message').innerHTML;
     container.innerHTML = "";
+    
     for(let i = db.length-1; i >= 0; i--){
+        let timeUser = new Date(db[i]['backtime']);
+
         if(window.localStorage.username == db[i]['name']){
             container.innerHTML += template.replace('${name}',db[i]['name'])
             .replace('${text}',db[i]['message'])
-            .replace('${time}',db[i]['backtime'])
+            .replace('${time}',timeUser.toLocaleTimeString().slice(0, -3))
             .replace('${}','right')
         }else{
             container.innerHTML += template .replace('${name}',db[i]['name'])
             .replace('${text}',db[i]['message'])
-            .replace('${time}',db[i]['backtime'])
+            .replace('${time}',timeUser.toLocaleTimeString().slice(0, -3))
             .replace('${}','left')
         }
     }
