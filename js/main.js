@@ -24,6 +24,10 @@ renderposts();
 //---------------------
     function addPost(){
         let message = document.getElementById('usertext').value;
+        if (message == ""){
+            alert("Вы не можете отправить пустое сообщение");
+            return;
+        }
         let date = new Date().toLocaleTimeString().slice(0, -3);
         if (userName == null || userName == '' || userName == undefined || userName == 'null'){
             setUsername();
@@ -52,12 +56,12 @@ renderposts();
             if(window.localStorage.username == db[i]['name']){
                 container.innerHTML += template.replace('${name}',db[i]['name'])
                 .replace('${text}',db[i]['message'])
-                .replace('${time}',db[i]['date'])
+                .replace('${time}',db[i]['backtime'])
                 .replace('${}','right')
             }else{
                 container.innerHTML += template .replace('${name}',db[i]['name'])
                 .replace('${text}',db[i]['message'])
-                .replace('${time}',db[i]['date'])
+                .replace('${time}',db[i]['backtime'])
                 .replace('${}','left')
             }
         }
