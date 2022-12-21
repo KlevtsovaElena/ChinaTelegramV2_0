@@ -82,7 +82,6 @@ function renderposts(){
 
 // Скопировал из таскбоарда Лены картинки что бы не заморачиваться ))) но не получается добавить окно с обоями в index.html. может кто-то попробует, я хз )
 
-
 let wallpaper = {   
     "image": [
             "https://klevtsovaelena.github.io/wallpaper/img/BlackWhite1.jpg",
