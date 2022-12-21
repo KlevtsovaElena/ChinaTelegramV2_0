@@ -2,7 +2,7 @@ body {
     padding: 0;
     margin: 0 auto;
     background-color:white;
-    width: 1200px;
+    width: 800px;
     font-family: 'Noto Sans Mende Kikakui', sans-serif;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -15,7 +15,7 @@ div, p, a, input, ::placeholder {
 #message {
     overflow-y: scroll;
     background-color: whitesmoke;
-    height: 90vh;
+    height: 75vh;
     border: 0.5px solid black;
     box-sizing: border-box;
 }
@@ -46,7 +46,7 @@ div, p, a, input, ::placeholder {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    margin-bottom: -50px;
 }
 
 .name {
@@ -60,10 +60,8 @@ div, p, a, input, ::placeholder {
 }
 
 .text {
-    max-width: 800px;
+    max-width: 300px;
     background-color: rgb(137 187 255);
-    margin-top: 10px;
-    text-align: center;
     border-radius: 10px;
     padding: 10px;
     font-size: 15px;
@@ -103,11 +101,16 @@ div, p, a, input, ::placeholder {
     justify-content: center;
     align-items: center;
     height: 100px;
+    border-radius: 0 0 10px 10px;
+    border-bottom: 0.5px solid black;
+    box-sizing: border-box;
+    border-left: 0.5px solid black;
+    border-right: 0.5px solid black;
 }
 
 .footer {
     width: 100%;
-    height: 50px;
+    height: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,7 +131,7 @@ div, p, a, input, ::placeholder {
     border: none;
     cursor: pointer;
     height: 35px;
-    background-color: rgba(79, 17, 17);
+    background-color: rgba(211, 211, 211);
 }
 
 .send-pic {
@@ -147,11 +150,13 @@ div, p, a, input, ::placeholder {
 #usertext {
     width: 400px;
     padding: 10px;
+    border-radius: 15px;
     border: none;
     box-shadow: 1px 2px 5px grey;
 }
 
 .left {
+    text-align: left;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
@@ -163,6 +168,7 @@ div, p, a, input, ::placeholder {
 
 .right {
     display: flex;
+    text-align: end;
     justify-content: flex-end;
     flex-direction: column;
     align-items: flex-end;
@@ -171,7 +177,7 @@ div, p, a, input, ::placeholder {
     transition: all 0.6s;
 }
 .gog{
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
 }
@@ -202,15 +208,16 @@ div, p, a, input, ::placeholder {
 
 .menu-window {
     border-radius: 0px 20px 20px 20px;
+    position: fixed;
     border: 1px solid black;
-    position: absolute;
-    width: 230px;
+    width: 300px;
     background-color: white;
     height: 80vh;
-    left: 0;
-    z-index: 1;
+    z-index: 2;
+    top: 0;
+    left: -300px;
     box-sizing: border-box;
-    transition: all 0.6s;
+    transition: all 0.5s;
 }
 
 .information {
@@ -243,4 +250,8 @@ input {
     padding: 10px;
     border: 1px solid black;
     margin-top: 10px;
+}
+
+.side-menu-activ {
+    left: 0 !important;
 }
