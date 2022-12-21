@@ -72,9 +72,11 @@ function renderposts(){
         }
     }
 
-    container.scrollTo(0, container.scrollHeight);
+     container.scrollTo(0, container.scrollHeight);
 }
     function userClear(){
         window.localStorage.setItem('username', '');
         console.log( window.localStorage.getItem('username'));
     }
+
+    //в ветке Елена создала комментарий в js
