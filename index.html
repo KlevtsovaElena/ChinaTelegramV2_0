@@ -15,7 +15,7 @@
     <div class="gog">
         <div class="header">
             <div class="menu">
-                <div class="changeBackground" onclick="toggleWallpapers()"><img class="burger" src="img/menu.png" alt=""></div>
+                <div class="changeBackground" onclick="toggleSideMenu()"><img class="burger" src="img/menu.png" alt=""></div>
                 <div class="logo">
                     <img class="logopng" src="img/header-logo.webp" alt="Messenger">
                 </div>
@@ -28,15 +28,22 @@
             
             <div class="header-name">China Telegram v1.1
             </div>
+            
         </div>
-        <div id="message">
-            <!-- <div class="menu-window">
-                <div class="information">
-                    <div class="name-menu">Name: ${name}</div>
-                    <div class="status">Status: ${something}</div>
-                    <div class="bg-wallpapers"></div>
-                </div> -->
+
+        <div id="menu-window">
+            <div class="information">
+                <div class="sideMenu" id="name-menu"></div>
+                <div class="sideMenu" onclick="changeUserName()">Изменить никнейм</div>
+                <div class="sideMenu" onclick="toggleWallpapers()">Сменить фон</div>
+             <!--   <div class="status">${something}</div>-->
+                <div id="bg-wallpapers"></div>
             </div>
+        </div>
+
+        <div id="message">
+            
+        </div>
 
             <!-- <div class="flex-box ${}">
                 <div class="window">
@@ -62,6 +69,10 @@
                 <div class="text">${text}</div>
                 <div class="time">${time}</div>
             </div>
+        </div>
+    </template>
+    <template id="tmpl-wallpapers">
+        <div id="lot" class="lot" style="background-image: url('${image}');" attr-image="${image}" onclick="changeBackgroung()">
         </div>
     </template>
 </body>
