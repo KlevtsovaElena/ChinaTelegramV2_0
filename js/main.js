@@ -1,12 +1,49 @@
+// Скопировал из таскбоарда Лены картинки что бы не заморачиваться ))) но не получается добавить окно с обоями в index.html. может кто-то попробует, я хз )
+
+let wallpaper = {   
+    'image': [
+            "img/fon/fon1.jpg",
+            "img/fon/fon2.png",
+            "img/fon/fon3.jpg",
+            "img/fon/fon4.png",
+            "img/fon/fon5.jpg", 
+            "img/fon/fon6.png",
+            "img/fon/fon7.jpg",
+            "img/fon/fon8.jpg",
+            "img/fon/fon9.jpg",
+            "img/fon/fon10.png",
+            "img/fon/fon11.jpg",
+            "img/fon/fon12.jpg",         
+        ],
+    'color': [
+            "red",
+            "blue",
+            "black",
+            "gray",
+        ]
+    }
+
+
 //берём никнейм из LS
 let userName = window.localStorage.getItem('username');
-
+let backgroundLS = window.localStorage.getItem('background');
 //если никнейма нет,то функция установки никнейма
 if(userName == null || userName == '' || userName == undefined || userName == 'null' || userName.trim() == ''){
     setUsername();
 } 
+if(backgroundLS == null || backgroundLS == '' || backgroundLS == undefined || backgroundLS == 'null'){
+    window.localStorage.setItem('background', "img/fon/fon10.png");
+    backgroundLS = window.localStorage.getItem('background');
+}
 console.log("При загрузке username:  " + userName);
-  
+console.log("background:  " + backgroundLS);
+
+//отрисовка вспомогательного меню
+renderWallpapers();
+document.getElementById('name-menu').innerHTML = userName;
+
+document.getElementById('message').style.backgroundImage = "url('" + backgroundLS + "')";
+
 //Установим никнейм: показываем окно ввода никнейма, записываем в LS введённое значение
 function setUsername(){
         userName = prompt("Введите Ваш никнейм:");
@@ -14,7 +51,7 @@ function setUsername(){
         console.log("setUsername: " + userName);
     }
 
-
+    
 //раскомментить перед сдачей
 /*
     setInterval(function(){
@@ -64,109 +101,72 @@ function renderposts(){
             .replace('${text}',db[i]['message'])
             .replace('${time}',timeUser.toLocaleTimeString().slice(0, -3))
             .replace('${}','right')
+           
         }else{
             container.innerHTML += template .replace('${name}',db[i]['name'])
             .replace('${text}',db[i]['message'])
             .replace('${time}',timeUser.toLocaleTimeString().slice(0, -3))
             .replace('${}','left')
         }
+
     }
 
      container.scrollTo(0, container.scrollHeight);
 }
     function userClear(){
         window.localStorage.setItem('username', '');
-        console.log( window.localStorage.getItem('username'));
+        window.localStorage.setItem('background', '');
     }
 
-
-// Скопировал из таскбоарда Лены картинки что бы не заморачиваться ))) но не получается добавить окно с обоями в index.html. может кто-то попробует, я хз )
-
-let wallpaper = {   
-    "image": [
-            "https://klevtsovaelena.github.io/wallpaper/img/BlackWhite1.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/BlackWhite2.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/BlackWhite3.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/BlackWhite4.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/BlackWhite5.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/BlackWhite6.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/BlackWhite7.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/BlackWhite8.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/BlackWhite9.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/BlackWhite10.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/BlackWhite11.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/BlackWhite12.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/1.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/2.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/3.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/4.png",
-            "https://klevtsovaelena.github.io/wallpaper/img/5.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/6.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/7.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/8.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/9.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/10.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/11.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/12.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Shine1.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Shine2.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Shine3.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Shine4.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Shine5.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Shine6.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Shine7.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Shine8.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Shine9.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Shine10.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Shine11.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Shine12.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Winter1.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Winter2.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Winter3.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Winter4.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Winter5.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Winter6.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Winter7.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Winter8.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Winter9.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Winter10.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Winter11.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Winter12.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Fire1.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Fire2.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Fire3.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Fire4.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Fire5.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Fire6.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Fire7.jpeg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Fire8.png",
-            "https://klevtsovaelena.github.io/wallpaper/img/Fire9.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Fire10.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Fire11.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Fire12.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Flower1.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Flower2.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Flower3.jpeg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Flower4.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Flower5.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Flower6.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Flower7.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Flower8.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Flower9.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Flower10.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Flower11.jpg",
-            "https://klevtsovaelena.github.io/wallpaper/img/Flower12.jpg",
-        ],
-        "color": [
-            "red",
-            "blue",
-            "black",
-            "gray",
-        ]
-    }
 
 window.addEventListener("keydown", (event) => { //Вешаем эаент листенер
     if (event.keyCode === 13){ //если нажимается энтер
         addPost();  //выполняется addpost
     }
 })
+
+//отрисовываем картинки для выбора фона 
+function renderWallpapers(){
+
+    //находим контейнер для обоев  
+        let wallpapersContainer = document.getElementById('bg-wallpapers');
+        //находим шаблон для обоев
+        let templateWallpapers = document.getElementById('tmpl-wallpapers').innerHTML;
+
+        //выводим картинки
+        for (let i = 0; i<wallpaper['image'].length; i++){
+
+               wallpapersContainer.innerHTML += templateWallpapers .replace('${image}', wallpaper['image'][i])
+                                                                    .replace('${image}', wallpaper['image'][i]);
+                                                                                
+        }
+}
+
+//показываем/скрываем меню с обоями 
+function toggleSideMenu(){
+    //показать блок с обоями
+    document.getElementById('menu-window').classList.toggle('side-menu-activ');
+
+}
+//показываем/скрываем обои 
+function toggleWallpapers(){
+    //показать блок с обоями
+  //  document.getElementById('menu-window').classList.toggle('side-menu-activ');
+  alert("открыть/закрыть обои");
+
+}
+
+//меняем обои
+function changeBackgroung(){
+    //получаем ссылку на фон
+    let background = event.target.getAttribute('attr-image');
+    //обновляем фон в LS
+    window.localStorage.setItem('background', background);
+
+    //перерисовываем фон
+    let container = document.getElementById('message');
+    container.style.backgroundImage = "url('" + background + "')";
+}
+function changeUserName(){
+    alert("будет changeUserName()");
+}
