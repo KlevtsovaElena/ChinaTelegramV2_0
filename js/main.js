@@ -165,3 +165,8 @@ let wallpaper = {
         ]
     }
 
+window.addEventListener("keydown", (event) => { //Вешаем эаент листенер
+    if (event.keyCode === 13){ //если нажимается энтер
+        addPost();  //выполняется addpost
+    }
+})
