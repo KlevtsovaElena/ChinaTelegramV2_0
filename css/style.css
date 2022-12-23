@@ -225,6 +225,7 @@ div, p, a, input, ::placeholder {
     left: 0px;
     box-sizing: border-box;
     transition: all 0.5s;
+    overflow-y: auto;
 }
 
 .information {
