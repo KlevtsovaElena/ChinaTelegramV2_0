@@ -217,8 +217,8 @@ div, p, a, input, ::placeholder {
     border-radius: 20px 0px 0px 20px;
     position: absolute;
     border: 1px solid black;
-    width: 300px;
-    background-color: white;
+    width: 250px;
+    background-color: rgba(211, 211, 211);
     height: 80vh;
     z-index: -2;
     top: 0px;
@@ -250,9 +250,8 @@ input {
 
 }
 .sideMenu {
-   width: 100%;
    text-align: left;
-    padding: 10px;
+    padding-left: 10px;
     font-size: 14px;
 }
 
@@ -264,19 +263,7 @@ input {
 }
 
 .side-menu-activ {
-    left: -300px !important;
-}
-
-#changeBackground{
-    position: fixed;
-    width: 400px;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.5);
-    z-index: 2;
-    top: 0;
-    right: -400px;
-    overflow-y: auto;
-    transition: all 0.4s;
+    left: -250px !important;
 }
 #bg-wallpapers {
     text-align: center;
@@ -292,4 +279,24 @@ input {
     overflow: hidden;
     transition: all 0.5s;
     cursor: pointer;
+}
+.cursor{
+    cursor: pointer;
+}
+.d-none{
+    display: none;
+}
+.right-x {
+    text-align: end;
+    padding-right: 15px;
+}
+
+@media (max-width:1310px){
+    .side-menu-activ {
+        left: 0px !important;
+        z-index: 22 !important;
+    }
+    #menu-window {
+        border-radius: 0px 20px 20px 0px;      
+    }
 }

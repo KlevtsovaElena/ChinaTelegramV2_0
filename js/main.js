@@ -1,4 +1,3 @@
-// Скопировал из таскбоарда Лены картинки что бы не заморачиваться ))) но не получается добавить окно с обоями в index.html. может кто-то попробует, я хз )
 
 let wallpaper = {   
     'image': [
@@ -24,7 +23,7 @@ let wallpaper = {
     }
 
 
-//берём никнейм из LS
+//берём никнейм и фон из LS
 let userName = window.localStorage.getItem('username');
 let backgroundLS = window.localStorage.getItem('background');
 //если никнейма нет,то функция установки никнейма
@@ -115,7 +114,6 @@ function renderposts(){
 }
     function userClear(){
         window.localStorage.setItem('username', '');
-        window.localStorage.setItem('background', '');
     }
 
 
@@ -131,6 +129,7 @@ function renderWallpapers(){
     //находим контейнер для обоев  
         let wallpapersContainer = document.getElementById('bg-wallpapers');
         //находим шаблон для обоев
+        wallpapersContainer.innerHTML = '';
         let templateWallpapers = document.getElementById('tmpl-wallpapers').innerHTML;
 
         //выводим картинки
@@ -142,7 +141,7 @@ function renderWallpapers(){
         }
 }
 
-//показываем/скрываем меню с обоями 
+//показываем/скрываем меню 
 function toggleSideMenu(){
     //показать блок с обоями
     document.getElementById('menu-window').classList.toggle('side-menu-activ');
@@ -151,9 +150,7 @@ function toggleSideMenu(){
 //показываем/скрываем обои 
 function toggleWallpapers(){
     //показать блок с обоями
-  //  document.getElementById('menu-window').classList.toggle('side-menu-activ');
-  alert("открыть/закрыть обои");
-
+  document.getElementById('bg-wallpapers').classList.toggle('d-none');
 }
 
 //меняем обои
@@ -168,5 +165,14 @@ function changeBackgroung(){
     container.style.backgroundImage = "url('" + background + "')";
 }
 function changeUserName(){
-    alert("будет changeUserName()");
+    let tempUserName = prompt("Введите новый никнейм:");
+    if (tempUserName !== null){
+        if(tempUserName == '' || tempUserName == undefined || tempUserName == 'null' || tempUserName.trim() == ''){
+            alert("Выберите другое имя, никнейм не может быть '" + tempUserName + "'");
+        }else {
+            window.localStorage.setItem('username', tempUserName);
+            userName = tempUserName;
+            document.getElementById('name-menu').innerHTML = userName;
+        }
+    }
 }
