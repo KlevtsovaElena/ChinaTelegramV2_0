@@ -12,7 +12,9 @@ let wallpaper = {
             "img/fon/fon9.jpg",
             "img/fon/fon10.png",
             "img/fon/fon11.jpg",
-            "img/fon/fon12.jpg",         
+            "img/fon/fon12.jpg",
+            "img/fon/fon13.jpeg",
+            "img/fon/fon14.jpeg",          
         ],
     'color': [
             "red",
