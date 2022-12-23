@@ -36,7 +36,7 @@ div, p, a, input, ::placeholder {
     color: white;
     display: flex;
     align-items: center;
-    box-shadow: 0px 0px 10px black;
+    /* box-shadow: 0px 0px 10px black; */
 }
 
 .header-name {
@@ -111,7 +111,7 @@ div, p, a, input, ::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 70px;
     border-radius: 0 0 10px 10px;
     border-bottom: 0.5px solid black;
     box-sizing: border-box;
@@ -138,7 +138,7 @@ div, p, a, input, ::placeholder {
     border: 1px solid black;
     border-radius: 20px;
     width: 35px;
-    padding: 8px;
+    /* padding: 5px; */
     background-color: white;
     border: none;
     cursor: pointer;
@@ -150,8 +150,11 @@ div, p, a, input, ::placeholder {
     width: 20px;
     background-position: center;
     background-repeat: no-repeat;
-    margin-left: 1px;
+    /* margin-left: 1px; */
     transition: all 0.3s;
+    border: 1px solid grey;
+    border-radius: 20px;
+    padding: 5px;
 }
 
 .send-pic:hover {
@@ -160,11 +163,12 @@ div, p, a, input, ::placeholder {
 }
 
 #usertext {
-    width: 400px;
+    width: 300px;
     padding: 10px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
+    /* box-shadow: 1px 2px 5px grey; */
+    background-color: rgb(212, 212, 212);
     border: none;
-    box-shadow: 1px 2px 5px grey;
 }
 
 .left {
@@ -185,7 +189,7 @@ div, p, a, input, ::placeholder {
     flex-direction: column;
     align-items: flex-end;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 10px;
     transition: all 0.6s;
 }
 .gog{
@@ -251,16 +255,39 @@ div, p, a, input, ::placeholder {
 input {
     outline: none;
 }
+
 #name-menu{
     margin-top: 5px;
     font-weight: bold;
+    font-size: 25px;
+    font-style: italic;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
 
 }
+
 .sideMenu {
-   text-align: left;
+    text-align: left;
     padding-left: 10px;
-    font-size: 14px;
+    font-size: 20px;
+    background-color: rgba(211, 211, 211);
+    padding: 10px;
+    border-bottom: 1px
+    solid black;
+    margin: 15px;
+    box-shadow: 0px 0.5px 1px black;
+    border-radius: 10px;
+    transition: all 0.4s;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bolder;
 }
+
+.sideMenu:hover {
+    background-color: white;
+    transition: all 0.4s;
+}
+
 
 .status {
     max-width: 200px;
@@ -275,7 +302,10 @@ input {
 }
 #bg-wallpapers {
     text-align: center;
+    margin-top: 10px;
+    transition: all 0.4s;
 }
+
 .lot{
     display: inline-block;
     position: relative;
@@ -287,16 +317,44 @@ input {
     overflow: hidden;
     transition: all 0.5s;
     cursor: pointer;
+    border: 0.5px solid black;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 5px black;
 }
+
 .cursor{
     cursor: pointer;
 }
+
 .d-none{
     display: none;
 }
+
 .right-x {
     text-align: end;
+    margin-top: 10px;
     padding-right: 15px;
+    color: black;
+}
+
+.emoji {
+    width: 25px;
+    border-radius: 50%;
+    /* border: 1px solid black; */
+    padding: 5px;
+    text-align: center;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.emoji:hover {
+    transform: scale(1.2);
+    transition: all 0.4s;
+}
+
+.border-b {
+    border-bottom: 1px solid black;
 }
 
 @media (max-width:1310px){
@@ -306,5 +364,87 @@ input {
     }
     #menu-window {
         border-radius: 0px 20px 20px 0px;      
+    }
+}
+
+@media (max-width: 500px) {
+
+    body {
+        width: 100%;
+    }
+    
+    .gog {
+        width: 100%;
+    }
+
+    .header {
+        width: 100%;
+    }
+
+    .footer {
+        width: 100%;
+        text-align: center;
+        /* height: 50px; */
+    }
+
+    .header-name {
+        font-size: 13px;
+        text-align: left;
+    }
+
+    .logopng {
+        width: 25px;
+    }
+
+    .menu {
+        width: 90px;
+        margin-left: 0;
+    }
+
+    #menu-window {
+        width: 175px;
+    }
+    
+    input {
+        margin-left: 30px;
+    }
+
+    .send {
+        margin-right: 20px;
+    }
+
+    .text {
+        max-width: 200px;
+        font-size: 13px;
+    }
+
+    .about-us {
+        font-size: 12px;
+    }
+    
+    .sendmessage {
+        height: 80px;
+    }
+
+    #name-menu {
+        font-size: 20px;
+        text-align: left;
+        font-style: italic;
+        background-color: white;
+        padding: 5px;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: bold;
+        border-bottom: 1px solid black;
+    }
+
+    .sideMenu {
+        font-size: 12px;
+        margin-top: 15px;
+        border-bottom: 0.5px solid black;
+    }
+
+    .information {
+        padding: 10px;
     }
 }
