@@ -164,6 +164,7 @@ function changeBackgroung(){
     let container = document.getElementById('message');
     container.style.backgroundImage = "url('" + background + "')";
 }
+//изменение никнейма
 function changeUserName(){
     let tempUserName = prompt("Введите новый никнейм:");
     if (tempUserName !== null){
