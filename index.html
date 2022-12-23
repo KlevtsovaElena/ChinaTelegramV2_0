@@ -32,12 +32,13 @@
         </div>
 
         <div id="menu-window">
+            <div class="cursor right-x" onclick="toggleSideMenu()">х</div>
             <div class="information">
                 <div class="sideMenu" id="name-menu"></div>
-                <div class="sideMenu" onclick="changeUserName()">Изменить никнейм</div>
-                <div class="sideMenu" onclick="toggleWallpapers()">Сменить фон</div>
+                <div class="sideMenu cursor" onclick="changeUserName()">Изменить никнейм</div>
+                <div class="sideMenu cursor" onclick="toggleWallpapers()">Сменить фон</div>
              <!--   <div class="status">${something}</div>-->
-                <div id="bg-wallpapers"></div>
+                <div id="bg-wallpapers" class="d-none"></div>
             </div>
         </div>
 
