@@ -57,16 +57,12 @@ function setUsername(){
         console.log("setUsername: " + userName);
     }
 
-    
-//раскомментить перед сдачей
-/*
+ renderposts();
+ document.getElementById('message').scrollTo(0,  document.getElementById('message').scrollHeight);
+   
     setInterval(function(){
         renderposts();
     }, 3000);
-*/
-//удалить---------
-renderposts();
-//---------------------
 
 //функция отправки сообщения
 function addPost(){
@@ -99,6 +95,9 @@ function addPost(){
         renderposts();
         //а инпут для ввода сообщения очищаем
         document.getElementById('usertext').value = "";
+        //а здесь мы указываем куда пролистнуть скролл (в конец)
+        document.getElementById('message').scrollTo(0,  document.getElementById('message').scrollHeight);
+       
     }
 }
 
@@ -116,6 +115,7 @@ function renderposts(){
     let db = JSON.parse(response);
     //найдём контейнер, куда будем отрисовывать все сообщения
     let container = document.getElementById('message');
+
     //найдём шаблон сообщения
     let template = document.getElementById('text-message').innerHTML;
     //сначала очистим контейнер, чтобы сообщения не дублировались
@@ -146,8 +146,7 @@ function renderposts(){
             .replace('${}','left')
         }
     }
-    //а здесь мы указываем куда пролистнуть скролл (в конец)
-    container.scrollTo(0, container.scrollHeight);
+
 }
 
 //отправка сообщений по Enter
