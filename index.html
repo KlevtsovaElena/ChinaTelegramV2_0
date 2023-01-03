@@ -51,8 +51,8 @@
         </div>
         <div class="sendmessage">
             <img src="img/fon/img_201721.png" class="emoji" alt="">
-            <div class="border-b"><input id="usertext" type="text" placeholder="Write a message..."></div>
-            <button class="send" onclick="addPost()"><img class="send-pic" src="img/fon/sendpng.png"></button>
+            <div class="border-b"><input id="usertext" type="text" placeholder="Write a message..." oninput="checkMessageInput()"></div>
+            <button class="send non-active" id="btnSendMessageIcon" onclick="addPost()"><img class="send-pic" id="sendMessageBtn" src="img/fon/sendpng.png"></button>
         </div>
         <div class="footer">
             <div class="about-us">

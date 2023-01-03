@@ -68,14 +68,6 @@ function setUsername(){
 function addPost(){
     //берём текст сообщения
     let message = document.getElementById('usertext').value;
-    //если текст пустой или содержит одни пробелы,
-    if (message == "" || message.trim() == ""){
-        // то выводим пользователю
-        alert("Вы не можете отправить пустое сообщение");
-        //и выходим из функции??? видимо)
-        return;
-    }
-    //в другом случае будет продолжаться код
     //устанавливаем текущее ЛОКАЛЬНОЕ время пользователя без секунд
     //но вообще его можно убрать, тк мы его не используем
     let date = new Date().toLocaleTimeString().slice(0, -3);
@@ -83,7 +75,8 @@ function addPost(){
     if (userName == null || userName == '' || userName == undefined || userName == 'null' || userName.trim() == ''){
         //если пустой, то вызываем функцию установки никнейма
         setUsername();
-    }else {
+    }
+    else{
         //иначе
         //это полный адрес запроса для добавления сообщения на сервер    
         let url = 'https://ChinaTelegram.perfectpink.repl.co/?addpost&name=' + userName + '&message=' + message + '&date=' + date;
@@ -97,7 +90,9 @@ function addPost(){
         document.getElementById('usertext').value = "";
         //а здесь мы указываем куда пролистнуть скролл (в конец)
         document.getElementById('message').scrollTo(0,  document.getElementById('message').scrollHeight);
-       
+        let btnSendMessageIcon = document.getElementById('btnSendMessageIcon')
+        btnSendMessageIcon.classList.add('non-active')
+
     }
 }
 
@@ -220,3 +215,14 @@ function changeUserName(){
         }
     }
 }
+//Функция отключения кнопки отправки при пустом сообщении
+function checkMessageInput(){
+    let targetMessageInput = document.getElementById('usertext').value
+    let btnSendMessageIcon = document.getElementById('btnSendMessageIcon')
+    if (targetMessageInput.trim() == ""){
+        btnSendMessageIcon.classList.add('non-active')
+    }else{
+        btnSendMessageIcon.classList.remove('non-active')
+    }
+}
+
