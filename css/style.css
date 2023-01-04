@@ -325,11 +325,15 @@ input {
 .cursor{
     cursor: pointer;
 }
-
+ 
 .d-none{
     display: none;
 }
-
+.non-active{
+    opacity: 0%;
+    cursor: default;
+    z-index: -1;
+}
 .right-x {
     text-align: end;
     margin-top: 10px;
@@ -356,7 +360,6 @@ input {
 .border-b {
     border-bottom: 1px solid black;
 }
-
 @media (max-width:1310px){
     .side-menu-activ {
         left: 0px !important;
