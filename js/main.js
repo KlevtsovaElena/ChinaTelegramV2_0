@@ -147,7 +147,13 @@ function renderposts(){
 //отправка сообщений по Enter
 window.addEventListener("keydown", (event) => { //Вешаем эаент листенер
     if (event.keyCode === 13){ //если нажимается энтер
-        addPost();  //выполняется addpost
+        let userinput = document.getElementById('usertext').value
+        if(userinput.trim() == ""){ //проверяем пуст ли инпут
+            return
+        }else{
+          addPost();  //выполняется addpost
+        }
+        
     }
 })
 
