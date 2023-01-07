@@ -124,29 +124,51 @@
         let template = document.getElementById('text-message').innerHTML;
         //сначала очистим контейнер, чтобы сообщения не дублировались
         container.innerHTML = "";
-        
+
+        //переменная для временного хранения даты, для сравнивания с датой сообщения
+        let tempDate;
+
         //приступаем к отрисовке каждого сообщения
         //бежим по элементам массива db (там никнейм, время и текст сообения)
         for(let i = 0; i < db.length; i++){
-            //берём время из массива. 
+            //берём время и дату из массива. 
             //Для этого создаём новую переменную типа Date(иначе время будет строкой) и запихиваем туда значение времени из массива
-            let timeUser = new Date(db[i]['backtime']);
+            let dataTimeUser = new Date(db[i]['backtime']);
+
+            //время изначально на сервере записывается в UTC , оно одинаково в любой точке мира
+            //и уже при отрисовке мы его переводим в локальное, в то, которое у нас (toLocaleTimeString())
+            //.slice(0, -3) просто обрезает 3 последних символа. Таким образом, получаем время без секунд
+            let timeUser = dataTimeUser.toLocaleTimeString().slice(0, -3);
+
+            //преобразуем дату с сервера в дату, которая у пользователя
+            let dateUser = dataTimeUser.toLocaleDateString();
+
+            //здесь будем сравнивать даты, чтобы помечать новую дату сообщений
+            if (i == 0){
+                tempDate =  new Date(db[0]['backtime']).toLocaleDateString();
+            }else{
+                if (dateUser == tempDate) {
+                    dateUser = "";
+                }else{
+                    tempDate = dateUser;
+                }
+            }
 
             //заполняем шаблон одним сообщением
             //если никнейм наш...
             if(window.localStorage.username == db[i]['name']){
                 container.innerHTML += template .replace('${name}',db[i]['name'])
                                                 .replace('${text}',db[i]['message'])
-                                                //время изначально на сервере записывается в UTC , оно одинаково в любой точке мира
-                                                //и уже при отрисовке мы его переводим в локальное, в то, которое у нас (toLocaleTimeString())
-                                                .replace('${time}',timeUser.toLocaleTimeString().slice(0, -3))
+                                                .replace('${date}',dateUser)
+                                                .replace('${time}',timeUser)
                                                 .replace('${}','right');
             
             //и если никнейм не наш...
             }else{
                 container.innerHTML += template .replace('${name}',db[i]['name'])
                                                 .replace('${text}',db[i]['message'])
-                                                .replace('${time}',timeUser.toLocaleTimeString().slice(0, -3))
+                                                .replace('${date}',dateUser)
+                                                .replace('${time}',timeUser)
                                                 .replace('${}','left');
             }
         }
