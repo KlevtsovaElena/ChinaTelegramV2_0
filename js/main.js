@@ -67,10 +67,10 @@
     //после отрисовки сообщений скролл уползает к низу
     document.getElementById('message').scrollTo(0,  document.getElementById('message').scrollHeight);
 
-    //запуск функции отрисовки сообщений в режиме раз в 3 сек
-    setInterval(function(){
-        renderposts();
-    }, 3000);
+    // //запуск функции отрисовки сообщений в режиме раз в 3 сек
+    // setInterval(function(){
+    //     renderposts();
+    // }, 3000);
 
     //функция отправки сообщения
     function addPost(){
