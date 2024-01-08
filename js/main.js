@@ -86,7 +86,7 @@
         else{
             //иначе
             //это полный адрес запроса для добавления сообщения на сервер    
-            let url = 'https://ChinaTelegram.perfectpink.repl.co/?addpost&name=' + userName + '&message=' + message;
+            let url = 'https://1d652b8a-0e28-4a66-880a-05dfe8cd2a3b-00-3g82uq50zfoaj.spock.replit.dev/?addpost&name=' + userName + '&message=' + message;
             //далее делаем запрос, как на уроке в 3 строки
             let xhr = new XMLHttpRequest();
             xhr.open('GET', url, false);
@@ -108,7 +108,7 @@
     function renderposts(){
 
         //это  адрес запроса для получения  сообщения с сервера
-        let url = 'https://ChinaTelegram.perfectpink.repl.co/?getposts';
+        let url = 'https://1d652b8a-0e28-4a66-880a-05dfe8cd2a3b-00-3g82uq50zfoaj.spock.replit.dev/?getposts';
         //далее делаем запрос, как на уроке в 3 строки
         let xhr = new XMLHttpRequest();
         xhr.open('GET', url, false);
